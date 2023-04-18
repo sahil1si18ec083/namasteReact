@@ -1,0 +1,17 @@
+1.  Defer:
+If we move 
+ <script src="./App.js"></script>
+ above  the two cdn links , then it will not work and throw an error React is not defined because if <script src="./App.js"></script> is placed in top it will not be able to read react without 
+ those two lines . In order to make it work properly we need to put those cdn links first and then put <script src="./App.js"></script> so that code inside APP.JS can be able to read it
+ But still if you want to make it work while keeping  <script src="./App.js"></script> in top you need to add a keyword defer with it. Then it will work
+
+2. If there is any  by default hard coded  value in root and we do root.render(parent) then it will override the already existing data in dom and will render the new data
+
+3. First when the web page is loaded, browser reads html, as soon it loads, it reads react into our application using the react script tag, then it will load react dom into 
+our app, then it will load App.js and inside App.js it will run every thing line by line and then the tags are renderde into the dom. IF there is anything alreday there in dom ,it will replace it and 
+put the new things in root.
+
+4. React will only make changes inside the root. Suppose we are doing root.render(parent), it will make changes to that part. So react can work even in small portion of code.
+That is why react is a library and not a full fledged framework . These two files cdn react and react-dom is react. So For React, you donot need to create a full App with REACT unlike other framework
+You can inject react in any small portion of app. For example if you want to use react in any footer . Make it the root element. Do root.render() and use cdn links and this way you can inject react in any small portion of application
+
