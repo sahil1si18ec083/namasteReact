@@ -7,6 +7,9 @@
 // Manipulate the HTML DOM using React
 
 // using React.createElement for creating a tag
+
+import React from "react";
+import ReactDOM from "react-dom/client";
 let h1 = React.createElement(
   "h1",
   { className: "my-class", id: "myID", xyz: "abc" },
@@ -19,7 +22,11 @@ let root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(h1);
 
 // if you have to create nested chidren
-const p1 = React.createElement("p", {}, "first para tag");
+const p1 = React.createElement(
+  "p",
+  {},
+  "This is namaste react course by akshay saini"
+);
 const p2 = React.createElement("p", {}, "second  para tag");
 const parent1 = React.createElement(
   "div",
