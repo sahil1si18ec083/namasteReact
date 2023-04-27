@@ -1,4 +1,5 @@
 import React from "react";
+import { restoImageUrl } from "./Utility/Constant";
 const RestaurantCard = ({ restaurantList, index }) => {
   const {
     cloudinaryImageId,
@@ -16,7 +17,7 @@ const RestaurantCard = ({ restaurantList, index }) => {
       }}
     >
       <img
-        src={`https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/${cloudinaryImageId}`}
+        src={`${restoImageUrl}${cloudinaryImageId}`}
         alt="res-logo"
         className="res-logo"
       />

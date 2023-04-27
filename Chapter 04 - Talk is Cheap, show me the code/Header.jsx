@@ -1,15 +1,11 @@
 import React from "react";
-
+import { imageUrl } from "./Utility/Constant";
 const Header = () => {
   return (
     <React.Fragment>
       <div className="header">
         <div className="logo-container">
-          <img
-            src="https://raw.githubusercontent.com/chetannada/Namaste-React/main/Chapter%2004%20-%20Talk%20is%20Cheap%2C%20show%20me%20the%20code/Images/Food%20Fire%20Logo.png"
-            alt=""
-            style={{ width: "100%" }}
-          />
+          <img src={imageUrl} alt="Loading" style={{ width: "100%" }} />
         </div>
         <div className="nav-items">
           <ul>
