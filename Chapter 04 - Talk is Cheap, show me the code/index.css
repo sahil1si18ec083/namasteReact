@@ -40,3 +40,8 @@
   flex-wrap: wrap;
   margin: 5px;
 }
+.filter-btn {
+  margin: 10px;
+  padding: 5px;
+  cursor: pointer;
+}
