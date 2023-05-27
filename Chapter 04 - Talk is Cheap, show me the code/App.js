@@ -22,11 +22,13 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./Header";
 import Body from "./Body";
+import Footer from "./Footer";
 
 const AppLayOut = () => (
   <React.Fragment>
     <Header />
     <Body />
+    <Footer />
   </React.Fragment>
 );
 const root = ReactDOM.createRoot(document.getElementById("root"));
