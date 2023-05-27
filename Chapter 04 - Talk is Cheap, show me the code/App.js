@@ -23,7 +23,9 @@ import ReactDOM from "react-dom/client";
 import Header from "./Header";
 import Body from "./Body";
 import Footer from "./Footer";
-
+import { createBrowserRouter, RouterProvider } from "react-router-dom/dist";
+import About from "../Chapter 07-Finding the path/About";
+import Error from "../Chapter 07-Finding the path/Error";
 const AppLayOut = () => (
   <React.Fragment>
     <Header />
@@ -31,6 +33,10 @@ const AppLayOut = () => (
     <Footer />
   </React.Fragment>
 );
+const appRouter = createBrowserRouter([
+  { path: "/", element: <AppLayOut />, errorElement: <Error /> }, // 🆕
+  { path: "/about", element: <About /> },
+]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 console.log(root);
-root.render(<AppLayOut />);
+root.render(<RouterProvider router={appRouter} />);

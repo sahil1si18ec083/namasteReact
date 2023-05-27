@@ -1,4 +1,5 @@
 // Shimmer card to display with animation
+import { shimmerCount } from "./Constant";
 const CardShimmer = () => {
   return (
     <div className="shimmer-card">
@@ -13,7 +14,13 @@ const CardShimmer = () => {
 const Shimmer = () => {
   return (
     <>
-      <div className="shimmer-container">Shimmering........</div>
+      <div className="shimmer-container">
+        {Array(shimmerCount)
+          .fill(0)
+          .map((item, index) => {
+            return <CardShimmer key={index} />;
+          })}
+      </div>
     </>
   );
 };
