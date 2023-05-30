@@ -8,5 +8,14 @@ const restoImageUrl =
 
 const swiggy_api_URL =
   "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1702401&lng=72.83106070000001&page_type=DESKTOP_WEB_LISTING";
+const swiggyDetailApi =
+  "https://www.swiggy.com/dapi/menu/v4/full?lat=21.1702401&lng=72.83106070000001&menuId=229";
+
 const shimmerCount = 12;
-export { imageUrl, restoImageUrl, swiggy_api_URL, shimmerCount };
+export {
+  imageUrl,
+  restoImageUrl,
+  swiggy_api_URL,
+  shimmerCount,
+  swiggyDetailApi,
+};

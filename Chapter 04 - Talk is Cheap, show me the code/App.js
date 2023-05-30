@@ -26,16 +26,28 @@ import Footer from "./Footer";
 import { createBrowserRouter, RouterProvider } from "react-router-dom/dist";
 import About from "../Chapter 07-Finding the path/About";
 import Error from "../Chapter 07-Finding the path/Error";
+import Contact from "./Contact";
+import { Outlet } from "react-router-dom/dist";
+import RestrauntMenu from "../Chapter 07-Finding the path/RestrauntMenu";
 const AppLayOut = () => (
   <React.Fragment>
     <Header />
-    <Body />
+    <Outlet />
     <Footer />
   </React.Fragment>
 );
 const appRouter = createBrowserRouter([
-  { path: "/", element: <AppLayOut />, errorElement: <Error /> }, // 🆕
-  { path: "/about", element: <About /> },
+  {
+    path: "/",
+    element: <AppLayOut />,
+    errorElement: <Error />,
+    children: [
+      { path: "/", element: <Body /> },
+      { path: "/about", element: <About /> },
+      { path: "/contact", element: <Contact /> },
+      { path: "/restaurant/:id", element: <RestrauntMenu /> },
+    ],
+  }, // 🆕
 ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 console.log(root);

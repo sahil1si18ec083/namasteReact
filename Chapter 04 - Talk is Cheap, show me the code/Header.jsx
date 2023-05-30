@@ -27,7 +27,9 @@ const Header = () => {
               <li>About us</li>
             </Link>
 
-            <li>Contact us</li>
+            <Link to={"/contact"}>
+              <li>Contact us</li>
+            </Link>
             <li>
               <i className="fa-solid fa-cart-shopping"></i>
             </li>
