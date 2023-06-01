@@ -29,6 +29,9 @@ import Error from "../Chapter 07-Finding the path/Error";
 import Contact from "./Contact";
 import { Outlet } from "react-router-dom/dist";
 import RestrauntMenu from "../Chapter 07-Finding the path/RestrauntMenu";
+import Profile from "../Chapter 08 - Let's get Classy/Profile";
+import Car from "../Chapter 08 - Let's get Classy/ProfileClass";
+
 const AppLayOut = () => (
   <React.Fragment>
     <Header />
@@ -43,7 +46,16 @@ const appRouter = createBrowserRouter([
     errorElement: <Error />,
     children: [
       { path: "/", element: <Body /> },
-      { path: "/about", element: <About /> },
+      {
+        path: "/about",
+        element: <About />,
+        children: [
+          {
+            path: "profile",
+            element: <Profile />,
+          },
+        ],
+      },
       { path: "/contact", element: <Contact /> },
       { path: "/restaurant/:id", element: <RestrauntMenu /> },
     ],
