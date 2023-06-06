@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { swiggy_api_URL } from "./Utility/Constant";
 import { Link } from "react-router-dom";
+import Helper from "./Utility/Helper";
 const Body = () => {
   console.log("render");
   const [searchText, setSearchText] = useState("");
@@ -16,13 +17,7 @@ const Body = () => {
     setSearchText(event.target.value);
   };
   const searchHandler = () => {
-    setFilteredRestaurants(
-      allRestaurants.filter((restaurantItem, restaurantindex) =>
-        restaurantItem.data.name
-          .toLowerCase()
-          .includes(searchText.toLowerCase())
-      )
-    );
+    setFilteredRestaurants(Helper(allRestaurants, searchText));
   };
 
   useEffect(() => {

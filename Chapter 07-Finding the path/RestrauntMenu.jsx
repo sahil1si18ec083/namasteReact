@@ -4,25 +4,11 @@ import { useState } from "react";
 import { swiggyDetailApi } from "../Chapter 04 - Talk is Cheap, show me the code/Utility/Constant";
 import { restoImageUrl } from "../Chapter 04 - Talk is Cheap, show me the code/Utility/Constant";
 import Shimmer from "../Chapter 04 - Talk is Cheap, show me the code/Utility/Shimmer";
+import useRestaurant from "../Chapter 04 - Talk is Cheap, show me the code/Utility/Hooks/useRestaurant";
 const RestrauntMenu = () => {
-  useEffect(() => {
-    getResoInfo();
-  }, []);
   const { id } = useParams();
-  const [resData, setResData] = useState(null);
-  const getResoInfo = () => {
-    fetch(
-      `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9569911&lng=77.6027732&restaurantId=${id}&submitAction=ENTER`
-    )
-      .then((data) => {
-        return data.json();
-      })
-      .then((json) => {
-        console.log(json);
-        setResData(json);
-      });
-  };
-  console.log(resData);
+  const resData = useRestaurant(id);
+
   return resData === null ? (
     <Shimmer />
   ) : (
