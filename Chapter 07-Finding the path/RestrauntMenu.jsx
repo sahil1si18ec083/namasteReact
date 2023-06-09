@@ -7,7 +7,7 @@ import Shimmer from "../Chapter 04 - Talk is Cheap, show me the code/Utility/Shi
 import useRestaurant from "../Chapter 04 - Talk is Cheap, show me the code/Utility/Hooks/useRestaurant";
 const RestrauntMenu = () => {
   const { id } = useParams();
-  const resData = useRestaurant(id);
+  const resData = useRestaurant(id); // this useRestaurant is a custom hook
 
   return resData === null ? (
     <Shimmer />

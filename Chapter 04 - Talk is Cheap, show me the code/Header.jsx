@@ -30,6 +30,9 @@ const Header = () => {
             <Link to={"/contact"}>
               <li>Contact us</li>
             </Link>
+            <Link to={"/instaMart"}>
+              <li>InstaMart</li>
+            </Link>
             <li>
               <i className="fa-solid fa-cart-shopping"></i>
             </li>

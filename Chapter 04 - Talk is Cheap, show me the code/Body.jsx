@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { swiggy_api_URL } from "./Utility/Constant";
 import { Link } from "react-router-dom";
 import Helper from "./Utility/Helper";
+import useCheckOnline from "./Utility/Hooks/useCheckOnline";
 const Body = () => {
   console.log("render");
   const [searchText, setSearchText] = useState("");
@@ -31,7 +32,10 @@ const Body = () => {
     setAllRestaurants(json?.data?.cards?.at(2)?.data?.data?.cards);
     setFilteredRestaurants(json?.data?.cards?.at(2)?.data?.data?.cards);
   };
-
+  const online = useCheckOnline();
+  if (!online) {
+    return <h1>Please check your internet connection</h1>;
+  }
   return (
     <React.Fragment>
       <div className="body">
