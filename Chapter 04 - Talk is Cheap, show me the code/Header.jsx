@@ -2,6 +2,7 @@ import React from "react";
 import { imageUrl } from "./Utility/Constant";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+
 const Header = () => {
   let [title, setTitle] = useState("Food Villa");
   const [isLoggedin, setIsLoggedin] = useState(false);
@@ -39,14 +40,14 @@ const Header = () => {
             <li>
               {isLoggedin === true ? (
                 <button
-                  className="logout-btn"
+                  className="logout-btn bg-sky-500"
                   onClick={() => setIsLoggedin(false)}
                 >
                   LogOut
                 </button>
               ) : (
                 <button
-                  className="login-btn"
+                  className="login-btn font-bold text-xl bg-sky-500"
                   onClick={() => setIsLoggedin(true)}
                 >
                   Login
