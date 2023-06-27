@@ -1,6 +1,7 @@
 import React from "react";
 import { restoImageUrl } from "./Utility/Constant";
-const RestaurantCard = ({ restaurantList, index }) => {
+const RestaurantCard = ({ restaurantList, index, user }) => {
+console.log(user)
   const {
     cloudinaryImageId,
     name,
@@ -8,6 +9,7 @@ const RestaurantCard = ({ restaurantList, index }) => {
     avgRating,
     costForTwo,
     deliveryTime,
+  
   } = restaurantList[index].data;
   return (
     <div
@@ -26,6 +28,7 @@ const RestaurantCard = ({ restaurantList, index }) => {
       <h4>{avgRating}</h4>
       <h4>{costForTwo / 100}</h4>
       <h4>{`${deliveryTime} minutes`}</h4>
+      <h5>{user.name}</h5>
     </div>
   );
 };

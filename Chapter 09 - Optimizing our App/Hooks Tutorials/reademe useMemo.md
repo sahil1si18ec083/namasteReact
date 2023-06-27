@@ -13,4 +13,4 @@ The best use case of useMemo is that if you have a child component and if any st
 
 useMemo accepts two parameters one is a call back function and other is a dependency
 
-If you want any function to be not called unneessarily on any state change(or render ) and want it to called on any particular state chnage that wrap that function inside useMemo and put a depenedency as that state value.
+If you want any function to be not called unneessarily on any state change(or render ) and want it to called on any particular state chanage, then wrap that function inside useMemo and put a depenedency as that state value.

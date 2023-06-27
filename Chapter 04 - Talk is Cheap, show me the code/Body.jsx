@@ -7,7 +7,8 @@ import { swiggy_api_URL } from "./Utility/Constant";
 import { Link } from "react-router-dom";
 import Helper from "./Utility/Helper";
 import useCheckOnline from "./Utility/Hooks/useCheckOnline";
-const Body = () => {
+const Body = ({user}) => {
+ 
   console.log("render");
   const [searchText, setSearchText] = useState("");
   const [allRestaurants, setAllRestaurants] = useState([]);
@@ -66,6 +67,7 @@ const Body = () => {
                   <RestaurantCard
                     restaurantList={filteredRestaurants}
                     index={index}
+                    user={user}
                   />
                 </Link>
               ))

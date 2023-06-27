@@ -31,23 +31,26 @@ import { Outlet } from "react-router-dom/dist";
 import RestrauntMenu from "../Chapter 07-Finding the path/RestrauntMenu";
 import Profile from "../Chapter 08 - Let's get Classy/Profile";
 import Car from "../Chapter 08 - Let's get Classy/ProfileClass";
-import InstaMart from "../Chapter 09 - Optimizing our App/InstaMart";
+
 import { lazy } from "react";
 import Headers from "../Chapter 09 - Optimizing our App/Improve Performance of React Apps with Code Splitting/Components/Headers";
 import AppRoutes from "../Chapter 09 - Optimizing our App/Improve Performance of React Apps with Code Splitting/Components/AppRoutes";
-const AppLayOut = () => (
-  <React.Fragment>
-    {/* <Header />
-    <Outlet />
-    <Footer /> */}
-    <div style={{ display: "flex" }}>
+
+const AppLayOut = () => {
+  return (
+    <React.Fragment>
+      <Header />
+      <Outlet />
+      <Footer />
+      {/* <div style={{ display: "flex" }}>
       <Headers />
       <AppRoutes />
-    </div>
-  </React.Fragment>
-);
-const InstaMart = lazy(() =>
-  import("../Chapter 09 - Optimizing our App/InstaMart")
+    </div> */}
+    </React.Fragment>
+  );
+};
+const InstaMartAccordian = lazy(() =>
+  import("../Chapter 11- Data is the new oil/InstaMart")
 );
 const appRouter = createBrowserRouter([
   {
@@ -55,7 +58,17 @@ const appRouter = createBrowserRouter([
     element: <AppLayOut />,
     errorElement: <Error />,
     children: [
-      { path: "/", element: <Body /> },
+      {
+        path: "/",
+        element: (
+          <Body
+            user={{
+              name: "Namaste REACT",
+              emnailId: "sahil.1si18ec083@gmail.com",
+            }}
+          />
+        ),
+      },
       {
         path: "/about",
         element: <About />,
@@ -69,8 +82,8 @@ const appRouter = createBrowserRouter([
       { path: "/contact", element: <Contact /> },
       { path: "/restaurant/:id", element: <RestrauntMenu /> },
       {
-        path: "/instaMart",
-        element: <InstaMart />,
+        path: "/InstaMartAccordian",
+        element: <InstaMartAccordian />,
       },
     ],
   }, // 🆕
