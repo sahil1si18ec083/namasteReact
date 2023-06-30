@@ -1,7 +1,9 @@
 import React from "react";
 import { restoImageUrl } from "./Utility/Constant";
+import { useContext } from "react";
+import UserContext from "../Chapter 10- Jo dikhta hai vo bikta hai/utils/userContext";
 const RestaurantCard = ({ restaurantList, index, user }) => {
-console.log(user)
+  console.log(user);
   const {
     cloudinaryImageId,
     name,
@@ -9,8 +11,9 @@ console.log(user)
     avgRating,
     costForTwo,
     deliveryTime,
-  
   } = restaurantList[index].data;
+  const { userObj } = useContext(UserContext);
+  console.log(userObj);
   return (
     <div
       className="res-card"
@@ -28,7 +31,7 @@ console.log(user)
       <h4>{avgRating}</h4>
       <h4>{costForTwo / 100}</h4>
       <h4>{`${deliveryTime} minutes`}</h4>
-      <h5>{user.name}</h5>
+      <h5>{userObj.name}</h5>
     </div>
   );
 };

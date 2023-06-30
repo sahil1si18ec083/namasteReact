@@ -35,17 +35,28 @@ import Car from "../Chapter 08 - Let's get Classy/ProfileClass";
 import { lazy } from "react";
 import Headers from "../Chapter 09 - Optimizing our App/Improve Performance of React Apps with Code Splitting/Components/Headers";
 import AppRoutes from "../Chapter 09 - Optimizing our App/Improve Performance of React Apps with Code Splitting/Components/AppRoutes";
-
+import UserContext from "../Chapter 10- Jo dikhta hai vo bikta hai/utils/userContext";
 const AppLayOut = () => {
+  const [state, setState] = React.useState({
+    name: "Sahil",
+    email: "sahil.1si18eco83@gmail.com",
+  });
   return (
     <React.Fragment>
-      <Header />
-      <Outlet />
-      <Footer />
-      {/* <div style={{ display: "flex" }}>
+      <UserContext.Provider
+        value={{
+          userObj: state,
+          setState: setState,
+        }}
+      >
+        <Header />
+        <Outlet />
+        <Footer />
+        {/* <div style={{ display: "flex" }}>
       <Headers />
       <AppRoutes />
     </div> */}
+      </UserContext.Provider>
     </React.Fragment>
   );
 };
@@ -60,14 +71,7 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: (
-          <Body
-            user={{
-              name: "Namaste REACT",
-              emnailId: "sahil.1si18ec083@gmail.com",
-            }}
-          />
-        ),
+        element: <Body />,
       },
       {
         path: "/about",
