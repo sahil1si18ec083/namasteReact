@@ -10,12 +10,14 @@ const swiggy_api_URL =
   "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1702401&lng=72.83106070000001&page_type=DESKTOP_WEB_LISTING";
 const swiggyDetailApi =
   "https://www.swiggy.com/dapi/menu/v4/full?lat=21.1702401&lng=72.83106070000001&menuId=229";
-
+const NO_IMAGE_AVAILABLE =
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvHdRZDerGbZ57-ps_PwHdfI90X4p1sr8I4w&usqp=CAU";
 const shimmerCount = 12;
 export {
   imageUrl,
   restoImageUrl,
   swiggy_api_URL,
-  shimmerCount,
   swiggyDetailApi,
+  NO_IMAGE_AVAILABLE,
+  shimmerCount,
 };

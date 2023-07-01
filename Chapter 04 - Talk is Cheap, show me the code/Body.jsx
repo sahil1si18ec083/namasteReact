@@ -53,27 +53,30 @@ const Body = () => {
   return (
     <React.Fragment>
       <div className="body">
-        <div className="search-container">
+        <div className="p-3 text-center mt-3">
           <input
             type="text"
             value={searchText}
-            className="search-input"
-            placeholder="Search a restaurant you want..."
+            className="mx-3 p-2 px-2 w-96  border border-gray-300 rounded-md focus:outline-none"
+            placeholder="Search"
             onChange={(e) => inputhandleChange(e)}
           />
-          <button className="search-btn" onClick={searchHandler}>
+          <button
+            className="p-2 px-4 bg-gray-700 text-white rounded-md hover:shadow-md max-sm:hidden"
+            onClick={searchHandler}
+          >
             Search
           </button>
         </div>
-        <input
+        {/* <input
           type="text"
           value={userObj.userObj.name}
           onChange={(event) => handleInputChange(event)}
-        />
+        /> */}
         {allRestaurants.length === 0 ? (
           <Shimmer />
         ) : (
-          <div className="res-container">
+          <div className="res-container sm:flex flex-wrap m-0 p-0 justify-center">
             {filteredRestaurants.length === 0 && allRestaurants.length !== 0 ? (
               <p>No Restaurant found your filter</p>
             ) : (
