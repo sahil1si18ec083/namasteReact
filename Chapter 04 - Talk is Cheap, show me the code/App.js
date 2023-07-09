@@ -36,6 +36,9 @@ import { lazy } from "react";
 import Headers from "../Chapter 09 - Optimizing our App/Improve Performance of React Apps with Code Splitting/Components/Headers";
 import AppRoutes from "../Chapter 09 - Optimizing our App/Improve Performance of React Apps with Code Splitting/Components/AppRoutes";
 import UserContext from "../Chapter 10- Jo dikhta hai vo bikta hai/utils/userContext";
+import Cart from "../Chapter 12- Let's build our store/Cart";
+import { Provider } from "react-redux";
+import store from "../Chapter 12- Let's build our store/store";
 const AppLayOut = () => {
   const [state, setState] = React.useState({
     name: "Sahil",
@@ -43,20 +46,22 @@ const AppLayOut = () => {
   });
   return (
     <React.Fragment>
-      <UserContext.Provider
-        value={{
-          userObj: state,
-          setState: setState,
-        }}
-      >
-        <Header />
-        <Outlet />
-        <Footer />
-        {/* <div style={{ display: "flex" }}>
+      <Provider store={store}>
+        <UserContext.Provider
+          value={{
+            userObj: state,
+            setState: setState,
+          }}
+        >
+          <Header />
+          <Outlet />
+          <Footer />
+          {/* <div style={{ display: "flex" }}>
       <Headers />
       <AppRoutes />
     </div> */}
-      </UserContext.Provider>
+        </UserContext.Provider>
+      </Provider>
     </React.Fragment>
   );
 };
@@ -88,6 +93,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/InstaMartAccordian",
         element: <InstaMartAccordian />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
   }, // 🆕

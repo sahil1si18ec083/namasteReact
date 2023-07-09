@@ -27,7 +27,7 @@ const RestrauntMenu = () => {
             alt=""
           />
           <div className="justify-center space-y-1">
-            <h1 className="text-4xl font-semibold ">
+            <h1 className="text-4xl font-semibold w-30 ">
               {resData?.data?.cards?.at(0)?.card?.card?.info?.name}{" "}
             </h1>
             <h3 className="text-2xl">
@@ -41,8 +41,8 @@ const RestrauntMenu = () => {
                 "stars"}
             </h3>
             <h3 className="text-2xl">
-              🍲 ₹{resData?.data?.cards[0].card.card.info.costForTwo / 100} for
-              two
+              🍲 ₹{resData?.data?.cards?.at(0).card.card.info.costForTwo / 100}{" "}
+              for two
             </h3>
           </div>
         </div>

@@ -73,11 +73,12 @@ const Body = () => {
           value={userObj.userObj.name}
           onChange={(event) => handleInputChange(event)}
         /> */}
-        {allRestaurants.length === 0 ? (
+        {allRestaurants?.length === 0 ? (
           <Shimmer />
         ) : (
           <div className="res-container sm:flex flex-wrap m-0 p-0 justify-center">
-            {filteredRestaurants.length === 0 && allRestaurants.length !== 0 ? (
+            {filteredRestaurants?.length === 0 &&
+            allRestaurants?.length !== 0 ? (
               <p>No Restaurant found your filter</p>
             ) : (
               filteredRestaurants?.map((item, index) => (

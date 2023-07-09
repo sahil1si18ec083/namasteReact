@@ -1,5 +1,5 @@
 import React from "react";
-import { imageUrl } from "./Utility/Constant";
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useContext } from "react";

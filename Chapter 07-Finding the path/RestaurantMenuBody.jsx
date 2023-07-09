@@ -28,7 +28,7 @@ const RestaurantMenuBody = ({ resData }) => {
                   className="w-48 rounded-md "
                 />
                 <div className="flex flex-col">
-                  <h1 className="font-semibold text-xl">
+                  <h1 className="font-semibold text-xl w-[19rem]">
                     {item?.card?.info?.name}
                   </h1>
                   <p className="font-normal">

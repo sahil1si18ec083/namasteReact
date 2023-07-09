@@ -14,7 +14,7 @@ const CardShimmer = () => {
 const Shimmer = () => {
   return (
     <>
-      <div className="shimmer-container">
+      <div className="shimmer-container bg-red-700">
         {Array(shimmerCount)
           .fill(0)
           .map((item, index) => {
