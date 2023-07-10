@@ -1,9 +1,14 @@
 import React from "react";
 import { restoImageUrl } from "../Chapter 04 - Talk is Cheap, show me the code/Utility/Constant";
 import { NO_IMAGE_AVAILABLE } from "../Chapter 04 - Talk is Cheap, show me the code/Utility/Constant";
-
+import { useDispatch, useSelector } from "react-redux";
+import { setItems } from "../Chapter 12- Let's build our store/redux/appReducer";
 const RestaurantMenuBody = ({ resData }) => {
-  const addFoodItem = () => {};
+  const items = useSelector((state) => state.appReducer.items);
+  const dispatch = useDispatch();
+  const addFoodItem = (item) => {
+    dispatch(setItems([...items, item.card.info]));
+  };
   console.log(resData);
   const resMenuListArray = resData?.data?.cards
     ?.at(2)
@@ -37,7 +42,7 @@ const RestaurantMenuBody = ({ resData }) => {
                 </div>
               </div>
               <button
-                onClick={() => addFoodItem}
+                onClick={() => addFoodItem(item)}
                 className="bg-green-700 h-10 p-2 px-3 text-white rounded-md mr-0 hover:bg-green-600 "
               >
                 Add

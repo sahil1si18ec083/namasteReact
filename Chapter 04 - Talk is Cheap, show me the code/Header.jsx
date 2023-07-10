@@ -6,9 +6,11 @@ import { useContext } from "react";
 // import UserContext from "../Chapter 10- Jo dikhta hai vo bikta hai/utils/userContext";
 import UserContext from "../Chapter 10- Jo dikhta hai vo bikta hai/utils/userContext";
 import FoodifyIcon from "./Utility/FoodifyIcon";
+import { useSelector, useDispatch } from "react-redux";
 const Header = () => {
   const userObj = useContext(UserContext);
-
+  const cartItems = useSelector((state) => state.appReducer.items);
+  console.log(cartItems);
   let [title, setTitle] = useState("Food Villa");
   const [isLoggedin, setIsLoggedin] = useState(false);
 
@@ -64,7 +66,7 @@ const Header = () => {
           <ul className="flex py-4 px-4 text-black">
             <li className="px-2 hover:text-orange-400 text-l font-medium">
               <Link to="/cart" data-testid="cart">
-                Cart 🛒 (0)
+                Cart 🛒 ({cartItems.length})
               </Link>
             </li>
           </ul>
